@@ -299,8 +299,9 @@ if fs.Status(1)=='o'
         for n=1:len
             temp2(n)=temp((n-1)*8+4)*256+temp((n-1)*8+3);
             temp3(n)=temp((n-1)*8+6)*256+temp((n-1)*8+5);
+            fprintf(fp,'%d,%d\r\n',temp2(n),temp3(n));
         end
-        fprintf(fp,'%d,%d\r\n',temp2,temp3);
+        
         if len>=1500
             temp_data=temp2(end-1499:end);
             temp_data1=temp3(end-1499:end);
